@@ -1,4 +1,4 @@
-# webdriverjs-angular [![Build Status](https://travis-ci.org/vvo/webdriverjs-angular.png?branch=master)](https://travis-ci.org/vvo/webdriverjs-angular) [![Selenium Test Status](https://saucelabs.com/browser-matrix/webdriverjs-angular.svg)](https://saucelabs.com/u/webdriverjs-angular)
+# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverjs/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverjs/webdriverjs-angular) [![Selenium Test Status](https://saucelabs.com/browser-matrix/webdriverjs-angular.svg)](https://saucelabs.com/u/webdriverjs-angular)
 
 A [selenium webdriverjs](https://code.google.com/p/selenium/wiki/JsonWireProtocol) api
 compatible with [angular.js](http://angularjs.org) applications.
