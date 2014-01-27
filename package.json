@@ -1,0 +1,35 @@
+{
+  "name": "webdriverjs-angular",
+  "version": "0.0.0",
+  "description": "Webdriverjs lib compatible with angular.js apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vvo/webdriverjs-angular"
+  },
+  "keywords": [
+    "automation",
+    "e2e",
+    "functional testing",
+    "angular.js",
+    "webdriver.js",
+    "selenium",
+    "waitForAngular"
+  ],
+  "author": "vvo <vincent.voyer@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/vvo/webdriverjs-angular/issues"
+  },
+  "homepage": "https://github.com/vvo/webdriverjs-angular",
+  "devDependencies": {
+    "mocha": "~1.17.0"
+  },
+  "dependencies": {
+    "lodash.partialright": "~2.4.1",
+    "webdriverjs": "~1.3.0"
+  }
+}
