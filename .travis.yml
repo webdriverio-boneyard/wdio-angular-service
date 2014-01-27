@@ -14,7 +14,7 @@ before_script:
 env:
   global:
   - SAUCE_USERNAME=webdriverjs-angular
-  - secure: WTJJW8Jq5JuZXq547N5sCV/ZDp3bBnaOQcTmcQSZOSGcZ/u0IWe3BqnxYYQvLM/v2CIZh37SJv+tK4jtZ/ii3qkBm++jqhUDCguafiQAGAgfWQkMxaED8c4ME6/ifH/9APZ8f6d+766HhdB1GAR2fqxj0hHO0HrpWq8UhzSAYZQ=
+  - secure: fPeUCYHS1Y/VF7rPcWCtMaRfvhzcuaTzyAa3nqsk1ERHMh+LfxjY3PspRs9EeG2p4y1YSkE5sPpobyB9uU/ColHXfGhyojVsleRQhUCl7ZZOUyGgLD5pbN2wc5lMBrK4SY5BsdfXzhbADzOSnocJQuAC6uYUJZzVZm31hfd5ZQU=
 
 matrix:
   - BROWSER=chrome
