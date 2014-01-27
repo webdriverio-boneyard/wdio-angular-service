@@ -11,7 +11,6 @@ var scripts = module.exports = {};
 * .arguments
 */
 scripts.waitForAngular = function(/* attemps, ngRoot, cb */) {
-  console.log(arguments);
   var attempts = arguments[0];
   var ngRoot = arguments[1];
   var seleniumCb = arguments[2];
