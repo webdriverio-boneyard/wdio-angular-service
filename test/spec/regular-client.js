@@ -3,9 +3,10 @@ describe('a regular webdriverjs client', function() {
   var client;
 
   before(function(done) {
-    client = webdriverjs.remote({
-      desiredCapabilities: testCapabilities,
-    }).init().url('http://localhost:8000/test/app/app/index.html#/view1', done);
+    client = webdriverjs
+      .remote(webdriverjsOptions)
+      .init()
+      .url('http://localhost:8000/test/app/app/index.html#/view1', done);
   });
 
   after(function(done) {

@@ -4,9 +4,10 @@ describe('an angular-compatible webdriverjs client', function() {
   var client;
 
   before(function(done) {
-    client = webdriverjsAngular.remote({
-      desiredCapabilities: testCapabilities,
-    }).init().url('http://localhost:8000/test/app/app/index.html#/view1', done);
+    client = webdriverjsAngular
+      .remote(webdriverjsOptions)
+      .init()
+      .url('http://localhost:8000/test/app/app/index.html#/view1', done);
   });
 
   after(function(done) {
