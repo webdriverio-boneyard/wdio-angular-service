@@ -99,7 +99,7 @@ StaticServlet.prototype.handleRequest = function(req, res) {
     if (stat.isDirectory())
       return self.sendDirectory_(req, res, path);
     if (/partial/.test(req.url.pathname))
-      return setTimeout(self.sendFile_.bind(self), 200, req, res, path);
+      return setTimeout(self.sendFile_.bind(self), 1000, req, res, path);
     return self.sendFile_(req, res, path);
   });
 }

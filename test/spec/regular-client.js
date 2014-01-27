@@ -15,6 +15,8 @@ describe('a regular webdriverjs client', function() {
 
   it('does not wait for angularjs when clicking', function(done) {
     client
+      // wait for page load
+      .pause(2000)
       .click('[href="#/view2"]')
       .getText('.ng-scope:nth-child(1)', function(err, text) {
         assert.equal(err, null);

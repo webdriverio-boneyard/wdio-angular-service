@@ -10,6 +10,8 @@ function WebdriverjsAngular() {
 
   var client = this;
 
+  patch('init', addTimeout);
+
   [ 'element', 'elements', 'title'].forEach(waitForAngularBefore);
 
   ['url', 'elementIdClick'].forEach(waitForAngularAfter);
@@ -27,6 +29,10 @@ function WebdriverjsAngular() {
   }
 
   function waitForAngularAfter (method) {
+    patch(method, waitForAngular);
+  }
+
+  function patch(method, patchFn) {
     var original = client[method];
 
     client.addCommand(method, function() {
@@ -36,7 +42,7 @@ function WebdriverjsAngular() {
       originalArgs.push(function() {
         var responseArgs = arguments;
 
-        waitForAngular(function() {
+        patchFn(function() {
           cb.apply(client, responseArgs);
         });
       });
@@ -51,6 +57,10 @@ function WebdriverjsAngular() {
       // 40 attemps, using `document` as ngRoot
       [40, 'document'],
     cb);
+  }
+
+  function addTimeout(cb) {
+    client.timeouts('script', 20 * 1000, cb);
   }
 }
 

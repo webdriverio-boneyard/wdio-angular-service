@@ -1,5 +1,5 @@
 test/spec/*.js
---timeout 10000
+--timeout 100000
 --require test/bootstrap.js
 --reporter spec
 --growl

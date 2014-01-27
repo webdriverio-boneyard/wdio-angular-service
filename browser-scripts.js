@@ -11,10 +11,10 @@ var scripts = module.exports = {};
 * .arguments
 */
 scripts.waitForAngular = function(/* attemps, ngRoot, cb */) {
-  var args = arguments;
-  var attempts = args[0];
-  var ngRoot = args[1];
-  var seleniumCb = args[2];
+  console.log(arguments);
+  var attempts = arguments[0];
+  var ngRoot = arguments[1];
+  var seleniumCb = arguments[2];
   var cb = function() {
     setTimeout(seleniumCb, 77);
   };
