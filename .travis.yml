@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - '0.10'
+  - "0.10"
 
 addons:
   sauce_connect: true
@@ -10,3 +10,16 @@ before_script:
   - npm install -g selenium-standalone
   - start-selenium > /dev/null 2>&1 &
   - node test/app/scripts/web-server.js > /dev/null &
+
+env:
+  global:
+  - SAUCE_USERNAME=webdriverjs-angular
+  - secure: fPeUCYHS1Y/VF7rPcWCtMaRfvhzcuaTzyAa3nqsk1ERHMh+LfxjY3PspRs9EeG2p4y1YSkE5sPpobyB9uU/ColHXfGhyojVsleRQhUCl7ZZOUyGgLD5pbN2wc5lMBrK4SY5BsdfXzhbADzOSnocJQuAC6uYUJZzVZm31hfd5ZQU=
+  matrix:
+  - BROWSER=chrome
+  - BROWSER=firefox
+  - BROWSER=explorer
+  - BROWSER=iphone
+  - BROWSER=ipad
+  - BROWSER=phantomjs
+  - BROWSER=android
