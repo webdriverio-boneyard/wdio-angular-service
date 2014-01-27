@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vvo/webdriverjs-angular"
+    "url": "git://github.com/webdriverjs/webdriverjs-angular"
   },
   "keywords": [
     "automation",
@@ -22,14 +22,14 @@
   "author": "vvo <vincent.voyer@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/vvo/webdriverjs-angular/issues"
+    "url": "https://github.com/webdriverjs/webdriverjs-angular/issues"
   },
-  "homepage": "https://github.com/vvo/webdriverjs-angular",
+  "homepage": "https://github.com/webdriverjs/webdriverjs-angular",
   "devDependencies": {
     "mocha": "~1.17.0"
   },
   "dependencies": {
     "lodash.partialright": "~2.4.1",
-    "webdriverjs": "~1.3.0"
+    "webdriverjs": "~1.3.1"
   }
 }
