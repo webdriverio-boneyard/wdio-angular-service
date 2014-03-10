@@ -12,7 +12,8 @@ var webdriverjsAngular = require('webdriverjs-angular');
 var options = {
     desiredCapabilities: {
         browserName: 'chrome'
-    }
+    },
+    ngRoot: 'body' // main application selector
 };
 
 webdriverjsAngular
