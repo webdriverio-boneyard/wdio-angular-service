@@ -10,32 +10,42 @@ var scripts = module.exports = {};
 * This is why we can't have named arguments, we must access arguments with
 * .arguments
 */
-scripts.waitForAngular = function(/* attemps, ngRoot, cb */) {
+scripts.waitForAngular = function(/* ngRoot, cb */) {
+  var ngRoot = arguments[0];
+  var cb = arguments[1];
+  var el = document.querySelector(ngRoot);
+
+  try {
+    angular.element(el).injector().get('$browser').
+        notifyWhenNoOutstandingRequests(cb);
+  } catch (e) {
+    cb(e);
+  }
+};
+
+scripts.testForAngular = function(/* attempts, cb */) {
   var attempts = arguments[0];
-  var ngRoot = arguments[1];
-  var seleniumCb = arguments[2];
-  var cb = function() {
-    setTimeout(seleniumCb, 77);
+  var cb = arguments[1];
+
+  var done = function(res) {
+    setTimeout(function() {
+      cb(res);
+    }, 0);
   };
-  var el = document.querySelector(ngRoot) || document;
 
   check(attempts);
 
   function check(n) {
-    if (window.angular &&
-        window.angular.element(el) &&
-        window.angular.element(el).injector() &&
-        window.angular.element(el).injector().get('$browser')) {
-      window
-        .angular
-        .element(el)
-        .injector()
-        .get('$browser')
-        .notifyWhenNoOutstandingRequests(cb);
+    if (window.angular && window.angular.resumeBootstrap) {
+      done([null, true]);
     } else if (n < 1) {
-      cb(false);
+      if (window.angular) {
+        done([new Error('angular never provided resumeBootstrap'), false]);
+      } else {
+        done([new Error('retries looking for angular exceeded'), false]);
+      }
     } else {
-      setTimeout(check, 250, n - 1);
+      window.setTimeout(check, 500, n - 1);
     }
   }
-};
+}

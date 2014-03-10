@@ -30,4 +30,5 @@ if(process.env.TRAVIS_BUILD_NUMBER === undefined) {
 }
 
 webdriverjsOptions.desiredCapabilities['webdriver.remote.quietExceptions'] = true;
-webdriverjsOptions.host = 'localhost'
+webdriverjsOptions.host = 'localhost';
+webdriverjsOptions.ngRoot = 'body';

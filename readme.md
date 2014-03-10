@@ -1,7 +1,6 @@
-# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverjs/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverjs/webdriverjs-angular) [![Selenium Test Status](https://saucelabs.com/browser-matrix/webdriverjs-angular.svg)](https://saucelabs.com/u/webdriverjs-angular)
+# webdriverjs-angular [![Build Status](https://travis-ci.org/vvo/webdriverjs-angular.png?branch=master)](https://travis-ci.org/vvo/webdriverjs-angular) [![Dependency Status](https://david-dm.org/vvo/webdriverjs-angular.png?theme=shields.io)](https://david-dm.org/vvo/webdriverjs-angular) [![devDependency Status](https://david-dm.org/vvo/webdriverjs-angular/dev-status.png?theme=shields.io)](https://david-dm.org/vvo/webdriverjs-angular#info=devDependencies)
 
-A [selenium webdriverjs](https://code.google.com/p/selenium/wiki/JsonWireProtocol) api
-compatible with [angular.js](http://angularjs.org) applications.
+Functional test you angularjs application without having to `.pause()` or `.wait()`.
 
 Based on [camme/webdriverjs](https://github.com/camme/webdriverjs), you access
 the same API commands but you never have to `.pause()` between actions.
@@ -76,5 +75,5 @@ start-selenium
 node test/app/scripts/web-server.js
 
 # launch tests
-npm test
+BROWSER=phantomjs npm test
 ```

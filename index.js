@@ -5,12 +5,79 @@ var partialRight = require('lodash.partialright');
 var inherits = require('util').inherits;
 var browserScripts = require('./browser-scripts.js');
 
-function WebdriverjsAngular() {
+function WebdriverjsAngular(options) {
   webdriverjs.apply(this, arguments);
 
   var client = this;
+  var originalUrl = client.url.bind(client);
 
   patch('init', addTimeout);
+  client.addCommand('url', function(url, cb) {
+    if (typeof url === 'function') {
+      return originalUrl.apply(this, arguments);
+    }
+
+    originalUrl('about:blank')
+      .execute(function() {
+        var url = arguments[0];
+        window.name = 'NG_DEFER_BOOTSTRAP!' + window.name;
+        window.location.assign(url);
+      }, [url]);
+
+    waitForLoad(function(err) {
+      if (err) {
+        return cb(err);
+      }
+
+      client
+        .executeAsync(browserScripts.testForAngular, [20], function(err, res) {
+          if (err) {
+            return cb(err)
+          }
+
+          client.execute(function() {
+            angular.resumeBootstrap();
+          }, [], cb);
+        });
+    });
+
+    function waitForLoad(cb) {
+      var timeout;
+      var cancelLoading = setTimeout(function hasTimeout() {
+        timeout = true;
+        cb(new Error('Timeout while waiting for page to load'));
+      }, 10 * 1000);
+
+      hasLoaded(function checkForLoad(err, res) {
+        if (timeout === true) {
+          return;
+        }
+
+        if (err) {
+          clearTimeout(cancelLoading);
+          return cb(err);
+        }
+
+        if (res === true) {
+          clearTimeout(cancelLoading);
+          return cb(null)
+        }
+
+        hasLoaded(checkForLoad);
+      });
+
+      function hasLoaded(cb) {
+        originalUrl(function(err, url) {
+          if (url === 'about:blank') {
+            return cb(err, false);
+          }
+
+          cb(err, true)
+        });
+      }
+    }
+
+  });
 
   [ 'element', 'elements', 'title'].forEach(waitForAngularBefore);
 
@@ -54,8 +121,7 @@ function WebdriverjsAngular() {
   function waitForAngular(cb) {
     client.executeAsync(
       browserScripts.waitForAngular,
-      // 40 attemps, using `document` as ngRoot
-      [40, 'document'],
+      [options.ngRoot],
     cb);
   }
 
