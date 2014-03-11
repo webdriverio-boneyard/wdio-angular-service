@@ -126,7 +126,7 @@ function WebdriverjsAngular(options) {
   }
 
   function addTimeout(cb) {
-    client.timeouts('script', 20 * 1000, cb);
+    client.timeouts('script', 10 * 1000, cb);
   }
 }
 
