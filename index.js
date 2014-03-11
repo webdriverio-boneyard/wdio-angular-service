@@ -1,7 +1,6 @@
 module.exports = WebdriverjsAngular;
 
 var webdriverjs = require('webdriverjs');
-var partialRight = require('lodash.partialright');
 var inherits = require('util').inherits;
 var browserScripts = require('./browser-scripts.js');
 
@@ -132,4 +131,6 @@ function WebdriverjsAngular(options) {
 
 inherits(WebdriverjsAngular, webdriverjs);
 
-WebdriverjsAngular.remote = partialRight(webdriverjs.remote, WebdriverjsAngular);
+WebdriverjsAngular.remote = function WebdriverjsAngularRemote(options) {
+  return webdriverjs.remote(options, WebdriverjsAngular);
+}
