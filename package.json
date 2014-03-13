@@ -29,6 +29,6 @@
     "mocha": "~1.17.0"
   },
   "dependencies": {
-    "webdriverjs": "git://github.com/camme/webdriverjs#f4aa944adce836d11129b3cb9bc5930d3fb6199e"
+    "webdriverjs": "git://github.com/camme/webdriverjs#def7b0b8a8b951b02b8f91b50e08c43e8ab999a8"
   }
 }
