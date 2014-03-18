@@ -29,6 +29,6 @@
     "mocha": "~1.17.0"
   },
   "dependencies": {
-    "webdriverjs": "^1.5.0"
+    "webdriverjs": "^1.5.1"
   }
 }
