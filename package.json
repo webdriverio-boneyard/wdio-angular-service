@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/webdriverjs/webdriverjs-angular"
+    "url": "git://github.com/webdriverio/webdriverjs-angular"
   },
   "keywords": [
     "automation",
@@ -16,15 +16,16 @@
     "functional testing",
     "angular.js",
     "webdriver.js",
+    "webdriverio",
     "selenium",
     "waitForAngular"
   ],
   "author": "vvo <vincent.voyer@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/webdriverjs/webdriverjs-angular/issues"
+    "url": "https://github.com/webdriverio/webdriverjs-angular/issues"
   },
-  "homepage": "https://github.com/webdriverjs/webdriverjs-angular",
+  "homepage": "https://github.com/webdriverio/webdriverjs-angular",
   "devDependencies": {
     "mocha": "~1.17.0"
   },

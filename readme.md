@@ -1,4 +1,4 @@
-# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverjs/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverjs/webdriverjs-angular) [![Dependency Status](https://david-dm.org/webdriverjs/webdriverjs-angular.png?theme=shields.io)](https://david-dm.org/webdriverjs/webdriverjs-angular) [![devDependency Status](https://david-dm.org/webdriverjs/webdriverjs-angular/dev-status.png?theme=shields.io)](https://david-dm.org/webdriverjs/webdriverjs-angular#info=devDependencies)
+# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverio/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverjs/webdriverjs-angular)
 
 Functional test you angularjs application without having to `.pause()` or `.wait()`.
 
