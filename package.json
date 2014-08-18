@@ -1,6 +1,6 @@
 {
   "name": "webdriverjs-angular",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "WebdriverIO lib compatible with angular.js apps",
   "main": "index.js",
   "scripts": {
