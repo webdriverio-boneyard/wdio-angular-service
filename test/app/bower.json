@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.0.2",
-  "homepage": "https://github.com/webdriverjs/webdriverjs-angular",
+  "homepage": "https://github.com/webdriverio/webdriverjs-angular",
   "authors": [
     "vvo <vincent.voyer@gmail.com>"
   ],

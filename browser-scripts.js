@@ -5,7 +5,7 @@ var scripts = module.exports = {};
 
 /**
 * To be able to execute a regular function in the browser through selenium,
-* the webdriverjs does a waitForAngular.toString() then sends the resulting
+* the webdriverio does a waitForAngular.toString() then sends the resulting
 * string-code through selenium, to the browsers.
 * This is why we can't have named arguments, we must access arguments with
 * .arguments

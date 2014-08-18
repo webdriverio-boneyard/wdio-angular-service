@@ -1,6 +1,6 @@
 module.exports = WebdriverjsAngular;
 
-var webdriverjs = require('webdriverjs/lib/webdriverjs');
+var webdriverjs = require('webdriverio/lib/webdriverio');
 var inherits = require('util').inherits;
 var browserScripts = require('./browser-scripts.js');
 
@@ -132,5 +132,5 @@ function WebdriverjsAngular(options) {
 inherits(WebdriverjsAngular, webdriverjs);
 
 WebdriverjsAngular.remote = function WebdriverjsAngularRemote(options) {
-  return require('webdriverjs').remote(options, WebdriverjsAngular);
+  return require('webdriverio').remote(options, WebdriverjsAngular);
 }

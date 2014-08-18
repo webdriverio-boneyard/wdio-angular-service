@@ -1,7 +1,7 @@
 {
   "name": "webdriverjs-angular",
   "version": "0.1.2",
-  "description": "Webdriverjs lib compatible with angular.js apps",
+  "description": "WebdriverIO lib compatible with angular.js apps",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -30,6 +30,6 @@
     "mocha": "~1.17.0"
   },
   "dependencies": {
-    "webdriverjs": "^1.5.1"
+    "webdriverio": "^2.1.0"
   }
 }

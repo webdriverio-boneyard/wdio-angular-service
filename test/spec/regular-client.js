@@ -1,9 +1,9 @@
-describe('a regular webdriverjs client', function() {
-  var webdriverjs = require('webdriverjs');
+describe('a regular webdriverio client', function() {
+  var webdriverio = require('webdriverio');
   var client;
 
   before(function(done) {
-    client = webdriverjs
+    client = webdriverio
       .remote(webdriverjsOptions)
       .init()
       .url('http://localhost:8000/test/app/app/index.html#/view1', done);

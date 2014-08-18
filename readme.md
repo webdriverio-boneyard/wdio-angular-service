@@ -1,8 +1,8 @@
-# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverio/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverjs/webdriverjs-angular)
+# webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverio/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverio/webdriverjs-angular)
 
 Functional test you angularjs application without having to `.pause()` or `.wait()`.
 
-Based on [camme/webdriverjs](https://github.com/camme/webdriverjs), you access
+Based on [WebdriverIO](http://webdriver.io), you access
 the same API commands but you never have to `.pause()` between actions.
 
 ## Usage
@@ -27,12 +27,12 @@ webdriverjsAngular
 ```
 
 For more options, usage and API details, see
-[camme/webdriverjs](https://github.com/camme/webdriverjs).
+[WebdriverIO](http://webdriver.io).
 
 ## Why another webdriverjs lib?
 
 1. webdriverjs-angular is based on an existing lib, it's extending
-[camme/webdriverjs](https://github.com/camme/webdriverjs).
+[WebdriverIO](http://webdriver.io).
 
 2. webdriverjs-angular is designed to work well with angularJS applications.
 AngularJS applications have a specific behavior that needs to be taken care
@@ -49,7 +49,7 @@ to do it.
 
 Unlike [angular/protractor](https://github.com/angular/protractor) or
 [sebv/wd-tractor](https://github.com/sebv/wd-tractor),
-we do not enhance webdriverjs API with angularJS-related
+we do not enhance WebdriverIO API with angularJS-related
 command.
 
 You will not find any `elementByNgBinding`, `addMockModule`,
@@ -58,7 +58,7 @@ You will not find any `elementByNgBinding`, `addMockModule`,
 We think your functionnal tests should be as framework-agnostic as possible.
 
 If you need `elementByNgBinding`, just use regular
-[camme/webdriverjs](https://github.com/camme/webdriverjs)
+[WebdriverIO](http://webdriver.io)
 commands like `.element('[ng-binding=model]')`.
 
 ## Local testing
