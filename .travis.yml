@@ -11,8 +11,8 @@ before_script:
 env:
   - BROWSER=phantomjs
 
-# addons:
-#   sauce_connect: true
+addons:
+  sauce_connect: true
 # Wait for saucelab to respond on `timeouts` calls
 # http://support.saucelabs.com/forums/21034924-Open-Sauce-Support
 # env:

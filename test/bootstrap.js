@@ -5,7 +5,7 @@ if(process.env.TRAVIS_BUILD_NUMBER === undefined) {
     desiredCapabilities: {
       browserName: process.env.BROWSER
     },
-    port: 4444
+    port: 4445
   }
 } else {
   // wait for saucelabs to repond to /timeouts calls
