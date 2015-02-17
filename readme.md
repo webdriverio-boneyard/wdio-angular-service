@@ -19,10 +19,17 @@ var options = {
 webdriverjsAngular
     .remote(options)
     .init()
+    .withoutAngular()
     .url('http://www.google.com')
     .title(function(err, res) {
         console.log('Title was: ' + res.value);
     })
+    .withAngular()
+    .url('http://docs.angular.org')
+    .title(function(err, res) {
+        console.log('Title was: ' + res.value);
+    })
+    
     .end();
 ```
 

@@ -9,10 +9,22 @@ function WebdriverjsAngular(options) {
 
   var client = this;
   var originalUrl = client.url.bind(client);
+  
+  var withAngular = true;
+  
+  client.addCommand("withoutAngular", function(cb){
+    withAngular = false;
+    cb();
+  });
+
+  client.addCommand("withAngular", function(cb){
+    withAngular = true;
+    cb();
+  });
 
   patch('init', addTimeout);
   client.addCommand('url', function(url, cb) {
-    if (typeof url === 'function') {
+    if (typeof url === 'function' || !withAngular) {
       return originalUrl.apply(this, arguments);
     }
 
@@ -83,14 +95,20 @@ function WebdriverjsAngular(options) {
   ['url', 'elementIdClick'].forEach(waitForAngularAfter);
 
   function waitForAngularBefore (method) {
+    
     var original = client[method];
     client.addCommand(method, function(){
 
       var originalArgs = arguments;
-
-      waitForAngular(function() {
+      
+      if (withAngular) {
+        waitForAngular(function() {
+          original.apply(client, originalArgs);
+        });
+      } else {
         original.apply(client, originalArgs);
-      });
+      }
+
     });
   }
 
@@ -103,16 +121,19 @@ function WebdriverjsAngular(options) {
 
     client.addCommand(method, function() {
       var originalArgs = Array.prototype.slice.call(arguments);
-      var cb = originalArgs.pop();
+      
+      if (withAngular) {
+        var cb = originalArgs.pop();
 
-      originalArgs.push(function() {
-        var responseArgs = arguments;
+        originalArgs.push(function() {
+          var responseArgs = arguments;
 
-        patchFn(function() {
-          cb.apply(client, responseArgs);
+          patchFn(function() {
+            cb.apply(client, responseArgs);
+          });
         });
-      });
 
+      }
       original.apply(client, originalArgs);
     });
   }
