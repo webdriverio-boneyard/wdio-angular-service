@@ -9,6 +9,7 @@ function WebdriverjsAngular(options) {
 
   var client = this;
   var originalUrl = client.url.bind(client);
+  client.addCommand('driverurl', originalUrl);
 
   patch('init', addTimeout);
   client.addCommand('url', function(url, cb) {
