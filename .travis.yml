@@ -5,7 +5,7 @@ node_js:
 
 before_script:
   - "npm install -g selenium-standalone bower"
-  - "start-selenium > /dev/null 2>&1 &"
+  - "selenium-standalone install && selenium-standalone start > /dev/null 2>&1 &"
   - "node test/app/scripts/web-server.js > /dev/null &"
   - "cd test/app && bower install && cd ../../"
 
