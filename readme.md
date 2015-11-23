@@ -1,3 +1,5 @@
+__Note:__ webdriverjs-angular isn't yet compatible with WebdriverIO `v3.x`. We are currently working on it to make that happen soon. So stay tuned.
+
 # webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverio/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverio/webdriverjs-angular)
 
 Functional test you angularjs application without having to `.pause()` or `.wait()`.
