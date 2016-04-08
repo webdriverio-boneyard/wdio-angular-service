@@ -1,6 +1,6 @@
 module.exports = WebdriverjsAngular;
 
-var webdriverjs = require('webdriverio/lib/webdriverio');
+var webdriverjs = require('webdriverio/build/lib/webdriverio');
 var inherits = require('util').inherits;
 var browserScripts = require('./browser-scripts.js');
 
@@ -78,7 +78,7 @@ function WebdriverjsAngular(options) {
 
   });
 
-  [ 'element', 'elements', 'title'].forEach(waitForAngularBefore);
+  ['element', 'elements', 'title'].forEach(waitForAngularBefore);
 
   ['url', 'elementIdClick'].forEach(waitForAngularAfter);
 
