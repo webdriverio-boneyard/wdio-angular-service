@@ -2,7 +2,7 @@ __Note:__ webdriverjs-angular isn't yet compatible with WebdriverIO `v3.x`. We a
 
 # webdriverjs-angular [![Build Status](https://travis-ci.org/webdriverio/webdriverjs-angular.png?branch=master)](https://travis-ci.org/webdriverio/webdriverjs-angular)
 
-Functional test you angularjs application without having to `.pause()` or `.wait()`.
+Functional test your angularjs application without having to `.pause()` or `.wait()`.
 
 Based on [WebdriverIO](http://webdriver.io), you access
 the same API commands but you never have to `.pause()` between actions.
@@ -31,7 +31,7 @@ webdriverjsAngular
 For more options, usage and API details, see
 [WebdriverIO](http://webdriver.io).
 
-## Why another webdriverjs lib?
+## Why another webdriverio lib?
 
 1. webdriverjs-angular is based on an existing lib, it's extending
 [WebdriverIO](http://webdriver.io).
