@@ -5,7 +5,8 @@ module.exports = function (grunt) {
         babel: {
             options: {
                 sourceMap: false,
-                plugins: ['object-assign']
+                plugins: ['transform-object-assign'],
+                presets: ['es2015']
             },
             dist: {
                 files: [{
@@ -59,8 +60,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'eslint',
             'clean',
-            'babel',
-            'mocha_istanbul'
+            'babel'
         ])
     })
     grunt.registerTask('release', 'Bump and tag version', function (type) {
