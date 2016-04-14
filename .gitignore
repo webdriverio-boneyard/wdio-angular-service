@@ -1,0 +1,6 @@
+.idea
+errorShots
+node_modules
+bower_components
+build
+index_old.js

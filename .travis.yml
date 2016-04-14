@@ -1,7 +1,11 @@
+# use trusty (14.04) instead of the default precise (12.04) - seams to require additionally the 'sudo: required' flag - otherwise the 12.04 is still started.
+dist: trusty
+sudo: required
 language: node_js
 
 node_js:
-  - "0.10"
+#  - "0.12"
+  - "4.4"
 
 before_script:
   - "npm install -g selenium-standalone bower"
