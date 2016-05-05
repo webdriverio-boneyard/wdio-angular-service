@@ -7,6 +7,8 @@ Functional test you angularjs application without having to `.pause()` or `.wait
 Based on [WebdriverIO](http://webdriver.io), you access
 the same API commands but you never have to `.pause()` between actions.
 
+It provides two additional functions, `.withAngular()` and `.withoutAngular()`, to allow mixing of angular and non-angular pages.
+
 ## Usage
 
 ```js
@@ -21,10 +23,17 @@ var options = {
 webdriverjsAngular
     .remote(options)
     .init()
+    .withoutAngular()
     .url('http://www.google.com')
     .title(function(err, res) {
         console.log('Title was: ' + res.value);
     })
+    .withAngular()
+    .url('http://docs.angularjs.org')
+    .title(function(err, res) {
+        console.log('Title was: ' + res.value);
+    })
+    
     .end();
 ```
 
